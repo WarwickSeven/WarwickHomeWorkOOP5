@@ -9,11 +9,11 @@ public:
     Pair1(const T& _a, const T& _b) : a(_a), b(_b) { }
     virtual ~Pair1() { }
     
-    virtual T first() const {
+    T first() const {
         return a;
     }
     
-    virtual T second() const {
+    T second() const {
         return b;
     }
 };
@@ -39,7 +39,6 @@ public:
 };
 
 //Task 3.
-
 template <class T3>
 class StringValuePair : public Pair<std::string, T3> {
     std::string a;
@@ -47,14 +46,7 @@ class StringValuePair : public Pair<std::string, T3> {
 public:
     StringValuePair(std::string _a, T3 _b) : Pair<std::string, T3>(_a, _b), a(_a), b(_b) { }
     virtual ~StringValuePair() { }
-    std::string first() const;
 };
-
-template <class T3>
-std::string StringValuePair<T3>::first() const {
-    std::cout << a;
-    return "";
-}
 
 int main() {
     Pair1<int> p1(6, 9);
